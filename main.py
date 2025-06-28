@@ -1,4 +1,4 @@
-import openai
+from openai import OpenAI
 import os
 import base64
 import json
@@ -24,7 +24,8 @@ def open_csv(filename):
 # Načtení API klíče
 load_dotenv()
 api_key = os.getenv("API_KEY")
-client = openai.OpenAI(api_key=api_key)
+# client = openai.OpenAI(api_key=api_key)
+client = OpenAI(api_key=api_key)
 
 def encode_image_to_base64(path):
     with open(path, "rb") as image_file:
